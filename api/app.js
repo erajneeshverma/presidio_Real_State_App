@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 app.use(morgan("dev")); //HTTP request logger middleware for node.js 
-
+ 
 
 
 const __dirname = path.resolve();
@@ -29,10 +29,6 @@ const __dirname = path.resolve();
 app.use(express.json());
 
 app.use(cookieParser());
-
-app.listen(3000, () => {
-  console.log('Server is running on port 3000!');
-});
 
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
